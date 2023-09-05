@@ -6,6 +6,7 @@ public class SpawnManager2nd : MonoBehaviour
 {
 
     public GameObject[] spawnObjs;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,8 @@ public class SpawnManager2nd : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.S))
         {
-            Instantiate(spawnObjs[0], transform.position, Quaternion.identity);
+            int randomLength = Random.Range(0, spawnObjs.Length);
+            Instantiate(spawnObjs[randomLength],new Vector3(0,0,20), spawnObjs[randomLength].transform.rotation);
         }
 
     }
